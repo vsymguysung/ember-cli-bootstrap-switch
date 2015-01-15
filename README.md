@@ -25,7 +25,7 @@ $ ember g ember-cli-bootstrap-switch
 
 ### Handlebar Template
 ```
-{{bs-switch height=200 btnSize=bs-sm content=postContent focus=false header="Example"}}
+{{bs-switch name="my-bs-switch" btnSize="small" status=bsSwitchStatusValue callback="bsSwitchChanged"}}
 ```
 
 ### Brocfile.js ###
@@ -36,7 +36,7 @@ If you want the add-on to add it selectively you have to specify it in the `Broc
 
 ```
 var app = new EmberAddon({
-  'ember-cli-summernote': {
+  'ember-cli-bootstrap-switch': {
     "importBootstrapCSS": true,
     "importBootstrapJS": true,
     "importBootstrapSwitchCSS": true,
@@ -64,7 +64,6 @@ $ ember serve
 # visit the page with the following url.
 http://localhost:4200
 ```
-## ToDOs / Known Issues
 
 
 
@@ -72,7 +71,7 @@ http://localhost:4200
 
 #### Inspired by
 
-* 
+* http://www.bootstrap-switch.org
 
 #### License
 MIT license.

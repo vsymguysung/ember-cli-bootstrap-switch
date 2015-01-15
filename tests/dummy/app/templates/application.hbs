@@ -1,6 +1,9 @@
 <h2 id="title">Ember-CLI Bootstrap-Switch</h2>
 
 
-{{bs-switch }}
+{{bs-switch name="my-bs-switch" btnSize="small" status=bsSwitchStatusValue callback="bsSwitchChanged"}}
+
+
+{{input type="text" value=bsSwitchStatusValue}}
 
 {{outlet}}
