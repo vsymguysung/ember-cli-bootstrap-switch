@@ -4,7 +4,7 @@
 [![NPM Downlaads](https://img.shields.io/npm/dm/ember-cli-bootstrap-switch.svg)](https://www.npmjs.org/package/ember-cli-bootstrap-switch)
 
 ## Description
-Ember-cli-bootstrap-switch is an Ember CLI add-on. This addon actually converts bootstra-switch to an Ember component which is
+Ember-cli-bootstrap-switch is an Ember CLI add-on. This addon actually converts bootstrap-switch to an Ember component which is
 a re-usable unit. This is still a work in progress. Pull requests are welcome.
 
 
