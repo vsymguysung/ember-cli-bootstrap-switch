@@ -17,7 +17,7 @@ var bsSwitchComponent = Ember.Component.extend({
 
   willDestroyElement: function() {
     // console.log('Destroy the instance of Bootstrap Switch.');
-    this.$('input').destroy();
+    this.$('input').bootstrapSwitch('destroy');
 
     this.removeObserver('status', this.valueChanged);
   },
