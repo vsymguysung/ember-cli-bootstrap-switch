@@ -1,25 +1,78 @@
 # Ember-cli-bootstrap-switch
 
-This README outlines the details of collaborating on this Ember addon.
+[![Build Status](https://travis-ci.org/vsymguysung/ember-cli-bootstrap-switch.svg)](http://travis-ci.org/vsymguysung/ember-cli-bootstrap-switch)
+[![NPM Downlaads](https://img.shields.io/npm/dm/ember-cli-bootstrap-switch.svg)](https://www.npmjs.org/package/ember-cli-bootstrap-switch)
+
+## Description
+Ember-cli-bootstrap-switch is an Ember CLI add-on. This addon actually converts bootstra-switch to an Ember component which is
+a re-usable unit. This is still a work in progress. Pull requests are welcome.
+
+
+## Important
+
+This is very WIP at the moment...
+
 
 ## Installation
+```
+# install via npm
+$ npm install ember-cli-bootstra-switch --save-dev
+# make ember-cli fetch internal dependencies
+$ ember g ember-cli-bootstrap-switch
+```
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+## Basic Usage
 
-## Running
+### Handlebar Template
+```
+{{bs-switch height=200 btnSize=bs-sm content=postContent focus=false header="Example"}}
+```
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+### Brocfile.js ###
+The bootstrap and fontAwesome resources will not be imported to your resources by default. 
 
-## Running Tests
+If you want the add-on to add it selectively you have to specify it in the `Brocfile.js`
+(No option means false by default)
 
-* `ember test`
-* `ember test --server`
+```
+var app = new EmberAddon({
+  'ember-cli-summernote': {
+    "importBootstrapCSS": true,
+    "importBootstrapJS": true,
+    "importBootstrapSwitchCSS": true,
+    "importBootstrapSwitchJS": true
+  }
+});
+```
 
-## Building
+## Demo
+You can clone this repo and run the app 
 
-* `ember build`
+```
+$ sudo npm install -g ember-cli
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+# clone the codebase
+$ git clone http://github.com/vsymguysung/ember-cli-bootstrap-switch.git
+$ cd ember-cli-bootstrap-switch
+
+# install dependencies
+$ npm install; bower install
+
+# fire up local server
+$ ember serve
+
+# visit the page with the following url.
+http://localhost:4200
+```
+## ToDOs / Known Issues
+
+
+
+
+
+#### Inspired by
+
+* 
+
+#### License
+MIT license.
