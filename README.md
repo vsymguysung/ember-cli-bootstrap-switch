@@ -16,7 +16,7 @@ This is very WIP at the moment...
 ## Installation
 ```
 # install via npm
-$ npm install ember-cli-bootstra-switch --save-dev
+$ npm install ember-cli-bootstrap-switch --save-dev
 # make ember-cli fetch internal dependencies
 $ ember g ember-cli-bootstrap-switch
 ```
