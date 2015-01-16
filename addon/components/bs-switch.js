@@ -18,8 +18,6 @@ var bsSwitchComponent = Ember.Component.extend({
   willDestroyElement: function() {
     // console.log('Destroy the instance of Bootstrap Switch.');
     this.$('input').bootstrapSwitch('destroy');
-
-    this.removeObserver('status', this.valueChanged);
   },
 
   didInsertElement: function() {
@@ -40,27 +38,18 @@ var bsSwitchComponent = Ember.Component.extend({
       // console.log(event); // jQuery event
       // console.log(state); // true | false
       that.set('status', state);
+      that.send('sendActionToConsumer', state);
     });
-
-    this.addObserver('status', this.valueChanged);
   },
 
-  click: function(){
-    // console.log('click...');
+  actions: {
+    sendActionToConsumer: function(_state){
+      this.sendAction('callback', {
+          "name": this.get('name'),
+          "statusValue": _state
+      });
+    }
   },
-
-  /**
-   * Respond to external value changes. 
-   */
-  valueChanged: function() {
-    var value = this.get("status");
-    // console.log('valueChanged... state:', value);
-
-    this.sendAction('callback', {
-        "name": this.get('name'),
-        "statusValue": this.get('status')
-    });
-  }
 
 });
 
