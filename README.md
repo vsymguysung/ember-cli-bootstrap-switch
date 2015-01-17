@@ -5,12 +5,12 @@
 
 ## Description
 Ember-cli-bootstrap-switch is an Ember CLI add-on. This addon actually converts bootstrap-switch to an Ember component which is
-a re-usable unit. This is still a work in progress. Pull requests are welcome.
+a re-usable unit. Pull requests are welcome.
 
 
 ## Important
 
-This is very WIP at the moment...
+This is still a work in progress at the moment...
 
 
 ## Installation
@@ -29,7 +29,7 @@ $ ember g ember-cli-bootstrap-switch
 ```
 
 ### Brocfile.js ###
-The bootstrap and fontAwesome resources will not be imported to your resources by default. 
+The bootstrap resources will not be imported to your resources by default. 
 
 If you want the add-on to add it selectively you have to specify it in the `Brocfile.js`
 (No option means false by default)
