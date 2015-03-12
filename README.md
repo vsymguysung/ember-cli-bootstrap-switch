@@ -8,9 +8,9 @@ Ember-cli-bootstrap-switch is an Ember CLI add-on. This addon actually converts 
 a re-usable unit. Pull requests are welcome.
 
 
-## Important
+## Note
 
-This is still a work in progress at the moment...
+Pull requests are always welcome.
 
 
 ## Installation
