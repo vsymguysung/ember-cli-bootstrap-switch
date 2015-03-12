@@ -24,7 +24,7 @@ var bsSwitchComponent = Ember.Component.extend({
     var that = this;
 
     // Ensure bootstrap-switch is loaded...
-    Ember.assert("bootstrap-switch has to exist on Ember.$.fn.bootstrapSwitch", Ember.$.fn.bootstrapSwitch);
+    Ember.assert("bootstrap-switch has to exist on Ember.$.fn.bootstrapSwitch", typeof Ember.$.fn.bootstrapSwitch === "function" );
     // console.log('this.$(input):', this.$('input'));
 
     this.$('input').bootstrapSwitch({
