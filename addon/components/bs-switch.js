@@ -1,7 +1,5 @@
 import Ember from "ember";
 
-var get = Ember.get;
-
 
 var bsSwitchComponent = Ember.Component.extend({
 
