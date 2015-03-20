@@ -9,6 +9,9 @@ var bsSwitchComponent = Ember.Component.extend({
   btnSize: 'small',
   name: 'bs-switch',
   disabled: false,
+  onText: 'ON',
+  offText: 'OFF',
+  labelText: '',
 
   // Insternal state.
   status: false,
@@ -28,7 +31,10 @@ var bsSwitchComponent = Ember.Component.extend({
     this.$('input').bootstrapSwitch({
       "size": this.get('btnSize'),
       "state": this.get('status'),
-      "disabled": this.get('disabled')
+      "disabled": this.get('disabled'),
+      "onText": this.get('onText'),
+      "offText": this.get('offText'),
+      "labelText": this.get('labelText')
     });
 
     this.$('input').on('switchChange.bootstrapSwitch', function(event, state) {
@@ -39,6 +45,16 @@ var bsSwitchComponent = Ember.Component.extend({
       that.send('sendActionToConsumer', state);
     });
   },
+
+  /**
+   * Observes status for outside changes in order to update the plugin value.
+   *
+   * @method statusObserver
+   * @private
+   */
+  _statusObserver: function() {
+    this.$('input').bootstrapSwitch('state', this.get('status'), true);
+  }.observes('status'),
 
   actions: {
     sendActionToConsumer: function(_state){
