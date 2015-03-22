@@ -24,8 +24,27 @@ $ ember g ember-cli-bootstrap-switch
 ## Basic Usage
 
 ### Handlebar Template
+Exmaple 1:
+
 ```
-{{bs-switch name="my-bs-switch" btnSize="small" status=bsSwitchStatusValue callback="bsSwitchChanged"}}
+{{bs-switch name="my-bs-switch" 
+            btnSize="small" 
+            status=bsSwitchStatusValue 
+            callback="bsSwitchChanged"}}
+
+```
+
+Example 2:
+
+```
+{{bs-switch name="my-bs-switch" 
+            btnSize="small" 
+            onText="Up" 
+            offText="Down" 
+            labelText="Thumbs" 
+            status=bsSwitchStatusValue 
+            callback="bsSwitchChanged"}}
+
 ```
 
 ### Brocfile.js ###

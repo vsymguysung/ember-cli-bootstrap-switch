@@ -1,9 +1,41 @@
 <h2 id="title">Ember-CLI Bootstrap-Switch</h2>
 
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Example 1:</h3>
+  </div>
+  <div class="panel-body">
+    <pre>
+      &#123;&#123;bs-switch name="my-bs-switch" 
+                  btnSize="small" 
+                  status=bsSwitchStatusValue 
+                  callback="bsSwitchChanged"&#125;&#125;
+    </pre>
+    {{bs-switch name="my-bs-switch" btnSize="small" status=bsSwitchStatusValue callback="bsSwitchChanged"}}
+    <br>
+    {{input type="text" value=bsSwitchStatusValue}}
+  </div>
+</div>
 
-{{bs-switch name="my-bs-switch" btnSize="small" status=bsSwitchStatusValue callback="bsSwitchChanged"}}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Example 2:</h3>
+  </div>
+  <div class="panel-body">
+    <pre>
+      &#123;&#123;bs-switch name="my-bs-switch" 
+                  btnSize="small" 
+                  onText="Up" 
+                  offText="Down" 
+                  labelText="Thumbs" 
+                  status=bsSwitchStatusValue 
+                  callback="bsSwitchChanged"&#125;&#125;
+    </pre>
+    {{bs-switch name="my-bs-switch" btnSize="small" onText="Up" offText="Down" labelText="Thumbs" status=bsSwitchStatusValue callback="bsSwitchChanged"}}
+    <br>
+    {{input type="text" value=bsSwitchStatusValue}}
+  </div>
+</div>
 
-
-{{input type="text" value=bsSwitchStatusValue}}
 
 {{outlet}}
