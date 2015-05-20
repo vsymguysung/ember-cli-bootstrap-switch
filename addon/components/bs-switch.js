@@ -9,6 +9,8 @@ var bsSwitchComponent = Ember.Component.extend({
   btnSize: 'small',
   name: 'bs-switch',
   disabled: false,
+  onColor: 'primary',  // 'primary', 'info', 'success', 'warning', 'danger', 'default'
+  offColor: 'default', // 'primary', 'info', 'success', 'warning', 'danger', 'default'
   onText: 'ON',
   offText: 'OFF',
   labelText: '',
@@ -34,6 +36,8 @@ var bsSwitchComponent = Ember.Component.extend({
       "disabled": this.get('disabled'),
       "onText": this.get('onText'),
       "offText": this.get('offText'),
+      "onColor": this.get('onColor'),
+      "offColor": this.get('offColor'),
       "labelText": this.get('labelText')
     });
 
