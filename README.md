@@ -41,6 +41,8 @@ Example 2:
             btnSize="small" 
             onText="Up" 
             offText="Down" 
+            onColor='success'
+            offColor='warning'
             labelText="Thumbs" 
             status=bsSwitchStatusValue 
             callback="bsSwitchChanged"}}
