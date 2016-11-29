@@ -1,7 +1,24 @@
-import Ember from "ember";
+import Ember from 'ember';
 
 
-var bsSwitchComponent = Ember.Component.extend({
+const {
+  get,
+  set,
+  run, //jshint ignore: line
+  assert,
+  Component,
+  computed, //jshint ignore: line
+  observer, //jshint ignore: line
+  inject:{ service }, //jshint ignore: line
+  isBlank, //jshint ignore: line
+  isEmpty, //jshint ignore: line
+  isEqual, //jshint ignore: line
+  $ //jshint ignore: line
+} = Ember;
+
+
+
+let bsSwitchComponent = Component.extend({
 
   tagName: 'div',
   classNames: ['bs-switch'],
@@ -18,35 +35,31 @@ var bsSwitchComponent = Ember.Component.extend({
   // Insternal state.
   status: false,
 
-  willDestroyElement: function() {
-    // console.log('Destroy the instance of Bootstrap Switch.');
+  willDestroyElement() {
     this.$('input').bootstrapSwitch('destroy');
   },
 
-  didInsertElement: function() {
-    var that = this;
-
+  didInsertElement() {
     // Ensure bootstrap-switch is loaded...
-    Ember.assert("bootstrap-switch has to exist on Ember.$.fn.bootstrapSwitch", typeof Ember.$.fn.bootstrapSwitch === "function" );
-    // console.log('this.$(input):', this.$('input'));
+    assert("bootstrap-switch has to exist on Ember.$.fn.bootstrapSwitch", typeof Ember.$.fn.bootstrapSwitch === "function" );
 
     this.$('input').bootstrapSwitch({
-      "size": this.get('btnSize'),
-      "state": this.get('status'),
-      "disabled": this.get('disabled'),
-      "onText": this.get('onText'),
-      "offText": this.get('offText'),
-      "onColor": this.get('onColor'),
-      "offColor": this.get('offColor'),
-      "labelText": this.get('labelText')
+      "size": get(this, 'btnSize'),
+      "state": get(this, 'status'),
+      "disabled": get(this, 'disabled'),
+      "onText": get(this, 'onText'),
+      "offText": get(this, 'offText'),
+      "onColor": get(this, 'onColor'),
+      "offColor": get(this, 'offColor'),
+      "labelText": get(this, 'labelText')
     });
 
-    this.$('input').on('switchChange.bootstrapSwitch', function(event, state) {
+    this.$('input').on('switchChange.bootstrapSwitch', (event, state)=>{
       // console.log(this); // DOM element
       // console.log(event); // jQuery event
       // console.log(state); // true | false
-      that.set('status', state);
-      that.send('sendActionToConsumer', state);
+      set(this, 'status', state);
+      this.send('sendActionToConsumer', state);
     });
   },
 
@@ -56,14 +69,14 @@ var bsSwitchComponent = Ember.Component.extend({
    * @method statusObserver
    * @private
    */
-  _statusObserver: function() {
-    this.$('input').bootstrapSwitch('state', this.get('status'), true);
-  }.observes('status'),
+  _statusObserver: observer('status', function() {
+    this.$('input').bootstrapSwitch('state', get(this, 'status'), true);
+  }),
 
   actions: {
     sendActionToConsumer: function(_state){
       this.sendAction('callback', {
-          "name": this.get('name'),
+          "name": get(this, 'name'),
           "statusValue": _state
       });
     }
