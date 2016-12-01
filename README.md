@@ -1,6 +1,7 @@
 # Ember-cli-bootstrap-switch
 
 [![Build Status](https://travis-ci.org/vsymguysung/ember-cli-bootstrap-switch.svg)](http://travis-ci.org/vsymguysung/ember-cli-bootstrap-switch)
+[![NPM package](https://img.shields.io/npm/v/ember-cli-bootstrap-switch.svg)](https://www.npmjs.com/package/ember-cli-bootstrap-switch)
 [![NPM Downlaads](https://img.shields.io/npm/dm/ember-cli-bootstrap-switch.svg)](https://www.npmjs.org/package/ember-cli-bootstrap-switch)
 
 ## Description
